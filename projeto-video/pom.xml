@@ -10,7 +10,7 @@
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
-	
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
@@ -30,6 +30,13 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.19</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.adobe.acrobat/acrobat -->
+		<dependency>
+			<groupId>com.adobe.acrobat</groupId>
+			<artifactId>acrobat</artifactId>
+			<version>1.1</version>
+		</dependency>
+
 	</dependencies>
 
 </project>

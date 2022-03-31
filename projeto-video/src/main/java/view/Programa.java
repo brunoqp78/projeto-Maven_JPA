@@ -1,40 +1,40 @@
 package view;
 
 
+
+import java.awt.Desktop;
+import java.io.File;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-import model.Cliente;
-import model.Remedio;
-import model.Veterinario;
+import com.adobe.acrobat.Viewer;
+
+import model.Autor;
 
 public class Programa {
-	public static void main(String[] args) {
+	
+		/**
+	 * 
+	 * @param args
+	 */
+	public static void main(String args[]) {
 		
-		Veterinario v1 = new Veterinario(null, "Bruno", "Clinica");
-		Veterinario v2 = new Veterinario(null, "Erica", "Clinica");
-		Veterinario v3 = new Veterinario(null, "Jose", "Cirurgião");
+		Autor obj1 = new Autor(null, "Bruno Queiroz", "Brasileira");
+		Autor obj2 = new Autor(null, "Danilo", "Japones");
+		Autor obj3 = new Autor(null, "Fernando", "Argentino");
 		
-		Remedio r1 = new Remedio(null, "Ivermectina", "Pfizer", "10/10/2022");
-		Remedio r2 = new Remedio(null, "Loleg", "Pfizer", "10/10/2022");
 		
-		Cliente c1 = new Cliente(null, "Raquel", "000.000.000-00", "Raquel", "4444-4444");
-		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("projeto");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("clinica");
 		EntityManager em = emf.createEntityManager();
 		
 		em.getTransaction().begin();
-		
-		em.persist(v1); // chamo o gerenciador de tabelas(em) para fazer o comando insert relacionado ao veterinário presente em v1.
-		em.persist(v2); 
-		em.persist(v3); 
-		
-		em.persist(r1);
-		em.persist(r2);
-		
-		em.persist(c1);
-		
+		em.persist(obj1);
+		em.persist(obj2);
+		em.persist(obj3);
 		em.getTransaction().commit();
 		
 		em.close();
